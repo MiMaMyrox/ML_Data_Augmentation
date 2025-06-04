@@ -1,0 +1,1 @@
+﻿## TODO Create small pipeline that makes prediction
