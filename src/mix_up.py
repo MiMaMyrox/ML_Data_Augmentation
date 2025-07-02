@@ -3,7 +3,7 @@
 def linear_mix_up(df: pd.DataFrame=None, alpha=0.3, new_datapoints=0.4, label="strength"):
 
     if df is None:
-        df = pd.read_csv("data/train.csv")
+        df = pd.read_csv("./data/evaluation/train.csv")
     
     number_of_points =  int(len(df) * new_datapoints) if new_datapoints <= 1. else new_datapoints
 
@@ -18,9 +18,9 @@ def linear_mix_up(df: pd.DataFrame=None, alpha=0.3, new_datapoints=0.4, label="s
 
     new_df = pd.concat([df, new_df]).round(2)
 
-    new_df.to_csv("data/evaluation/lin_mix_up.csv", index=False)
+    new_df.to_csv(f"data/evaluation/lin_mix_up_{number_of_points}.csv", index=False)
     return df
 
 
 if __name__ == "__main__":
-    linear_mix_up(new_datapoints=1000)
+    linear_mix_up(new_datapoints=0.5)
