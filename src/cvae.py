@@ -9,7 +9,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 from scipy.stats import gaussian_kde
 
-df_train = pd.read_csv('data/evaluation/train.csv')
+df_train = pd.read_csv('./data/evaluation/train.csv')
 
 # Train Test Split
 X = df_train.drop(columns=['strength'])
