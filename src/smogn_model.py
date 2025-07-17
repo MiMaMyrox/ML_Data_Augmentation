@@ -21,7 +21,7 @@ def smogn_model(df: pd.DataFrame = None):
         rel_thres=0.18,
         rel_xtrm_type="high"
     )
-    
+
     augmented_data = pd.concat([augmentation, df])
     augmented_data.to_csv('data/evaluation/smogn.csv', index=False)
     return augmented_data
