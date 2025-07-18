@@ -7,7 +7,7 @@ def linear_mix_up(df: pd.DataFrame=None, alpha=0.3, new_datapoints=0.4, label="s
     
     number_of_points =  int(len(df) * new_datapoints) if new_datapoints <= 1. else new_datapoints
 
-    allow_dups = number_of_points > len(df) 
+    allow_dups = number_of_points > len(df)
 
     set1 = df.sample(n=number_of_points, random_state=42, replace=allow_dups).to_numpy()
     set2 = df.sample(n=number_of_points, random_state=7, replace=allow_dups).to_numpy()
