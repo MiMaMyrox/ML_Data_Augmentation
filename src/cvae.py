@@ -99,6 +99,8 @@ def cvae_model():
     strength = df_train['strength']
         
     kde = gaussian_kde(strength)
+
+    np.random.seed(42)
     zufallswerte = kde.resample(400)
     zufallswerte[zufallswerte < 3] = 3
     zufallswerte = zufallswerte.ravel()
